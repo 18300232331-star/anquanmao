@@ -114,3 +114,15 @@ footer a{color:#fff}
 .chip-line{color:#0e4d7a;font-weight:600}
 .moq-line{font-weight:700}
 @media(max-width:640px){.page-banner{height:200px}.carousel{height:300px}}
+
+.footer-social{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.footer-social a{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.2);text-decoration:none;color:#fff}
+.footer-social a svg{width:20px;height:20px;display:block}
+.footer-social .social-ig{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)}
+.footer-social .social-th{background:#000}
+.footer-social .social-fb{background:#1877f2}
+.footer-social .social-tt{background:#000}
+.footer-social .social-yt{background:#ff0000}
+.footer-social .g-fb{font:700 20px Arial,Helvetica,sans-serif;line-height:1}
+.footer-social .g-th{font:700 18px Arial,Helvetica,sans-serif;line-height:1}
+.footer-social .g-tt{font:700 18px Arial,Helvetica,sans-serif;line-height:1}
