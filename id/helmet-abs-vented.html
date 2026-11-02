@@ -84,9 +84,7 @@ root.querySelector(".cm-chat-send").addEventListener("click", function () {
   done.hidden = true; err.hidden = true;
   if (!msg.value.trim()) { msg.focus(); return; }
   var text = msg.value + (ct.value.trim() ? "\n" + ct.value.trim() : "");
-  window.open("https://wa.me/8618300232331?text=" + encodeURIComponent(text), "_blank");
-  done.textContent = W[lang] || W.en;
-  done.hidden = false; msg.value = ""; ct.value = "";
+  fetch("https://formspree.io/f/xqppglzw", { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify({ message: msg.value, contact: ct.value, _subject: "安全帽马甲询盘·网站聊天", source: "安全帽马甲询盘 · https://cmvest.cn", page: location.href }) }).then(function (r) { if (!r.ok) throw new Error("send failed"); done.textContent = (D[lang] && D[lang].done) || D.en.done; done.hidden = false; err.hidden = true; msg.value = ""; ct.value = ""; }).catch(function () { err.hidden = false; });
 });
 })();
 </script>
