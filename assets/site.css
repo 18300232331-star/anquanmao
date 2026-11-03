@@ -65,8 +65,8 @@ form.inquiry label{font-weight:600;font-size:14.5px}
 footer{background:#0a3a5e;color:#dcecf7;padding:44px 0 28px;margin-top:20px}
 footer a{color:#fff}
 .foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px}
-.float-rail{position:fixed;right:16px;bottom:16px;display:flex;flex-direction:column;gap:10px;z-index:90}
-.float-rail a,.float-rail button{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;border:0;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.25);text-decoration:none}
+.float-rail{position:fixed;right:16px;bottom:16px;display:flex;flex-direction:column;gap:14px;z-index:90}
+.float-rail a,.float-rail button{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;border:0;cursor:pointer;box-shadow:0 10px 28px rgba(0,0,0,.30),0 0 0 2px rgba(255,255,255,.85);text-decoration:none}
 .wa{background:#25d366;color:#fff}
 .to-top{background:#0e4d7a;color:#fff;display:none}
 .to-top.show{display:flex}
@@ -91,7 +91,7 @@ footer a{color:#fff}
   .btn-row{flex-direction:column}
   .btn-row .btn{width:100%}
   .float-rail{right:10px;bottom:12px}
-  .float-rail a,.float-rail button{width:46px;height:46px}
+  .float-rail a,.float-rail button{width:52px;height:52px}
 }
 
 .page-banner{position:relative;height:300px;overflow:hidden;background:#0a3a5e}
@@ -134,3 +134,10 @@ footer a{color:#fff}
 .contact-side-body h3{margin:0;font-size:21px}
 .contact-side-body p{margin:0;color:#5b6d7d}
 @media(max-width:860px){.contact-grid{grid-template-columns:1fr}}
+
+/* uniform floating stack 2026-11-03: 56px buttons, 14px gaps, stronger shadow, gentle chat pulse */
+#cm-chat{bottom:156px}
+#cm-chat .cm-chat-btn{box-shadow:0 10px 28px rgba(0,0,0,.30),0 0 0 2px rgba(255,255,255,.85);animation:cmChatPulse 2.6s ease-out infinite}
+@keyframes cmChatPulse{0%{box-shadow:0 10px 28px rgba(0,0,0,.30),0 0 0 0 rgba(14,77,122,.35)}70%{box-shadow:0 10px 28px rgba(0,0,0,.30),0 0 0 14px rgba(14,77,122,0)}100%{box-shadow:0 10px 28px rgba(0,0,0,.30),0 0 0 0 rgba(14,77,122,0)}}
+@media (prefers-reduced-motion: reduce){#cm-chat .cm-chat-btn{animation:none}}
+@media (max-width:640px){#cm-chat{right:10px;bottom:144px}#cm-chat .cm-chat-btn{width:52px;height:52px}}
