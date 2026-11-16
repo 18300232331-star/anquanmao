@@ -104,7 +104,7 @@ footer a{color:#fff}
 .carousel .slide.on{opacity:1}
 .carousel .slide img{width:100%;height:100%;object-fit:cover}
 .carousel .slide-text{position:absolute;inset:0;display:flex;align-items:center;background:rgba(10,58,94,.45)}
-.carousel .slide-text h2{color:#fff;font-size:clamp(26px,4vw,44px);margin:0;padding:0 20px;max-width:1140px;width:100%;margin-left:auto;margin-right:auto}
+.carousel .slide-text h2{color:#fff;font-size:clamp(26px,4vw,44px);margin:0;padding:0 96px;max-width:1140px;width:100%;margin-left:auto;margin-right:auto}
 .carousel button.car{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:0;background:rgba(255,255,255,.85);font-size:22px;cursor:pointer;z-index:5}
 .carousel button.prev{left:14px}.carousel button.next{right:14px}
 .chips{display:flex;gap:12px;flex-wrap:wrap}.chip{border:1px solid #dde5ec;border-radius:999px;padding:10px 18px;background:#f4f7f9;font-weight:600}
@@ -172,9 +172,35 @@ footer a{color:#fff}
 .cm-trust{display:flex;flex-wrap:wrap;gap:16px 28px;max-width:1140px;margin:20px auto;padding:0 20px}
 .cm-trust span b{font-size:1.25em}
 .cm-process{max-width:1140px;margin:24px auto;padding:0 20px}
-.cm-process ol{display:flex;flex-wrap:wrap;gap:8px 24px;margin:8px 0;padding-left:20px}
+.cm-process ol{counter-reset:cmstep;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;list-style:none;margin:8px 0;padding-left:0}
+.cm-process ol li{counter-increment:cmstep;border:1px solid #dde5ec;border-radius:10px;padding:14px 16px;background:#f7fafc;font-weight:600}
+.cm-process ol li::before{content:counter(cmstep) ". ";color:#0e4d7a;font-weight:800}
+@media(max-width:1024px){.cm-process ol{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.cm-process ol{grid-template-columns:1fr}}
 .cm-faq{max-width:1140px;margin:20px auto;padding:0 20px}
 .cm-faq details{margin:10px 0}
 .cm-faq summary{cursor:pointer;font-weight:600}
 .cm-related{max-width:1140px;margin:24px auto;padding:0 20px}
 .cm-related-links{display:flex;flex-wrap:wrap;gap:8px 16px}
+
+/* 2026-11-16 vest fix (H1/M1/M4/L8/L9/L10/M3/M6) */
+@media(max-width:640px){
+  .page-banner .banner-text{flex-direction:column;align-items:flex-start;justify-content:center}
+  .page-banner .banner-text h1{width:100%}
+  .page-banner .banner-text .cm-cta-row{width:100%}
+}
+.cm-cta-row{margin-right:24px}
+.cm-product-img{width:100%;max-width:640px;margin:8px auto 4px;background:#fff;border-radius:12px}
+.cm-keystrip td{background:#fff}
+.article-date{color:#5b6d7d;font-size:14.5px;margin:0 0 12px}
+.news-date{font-size:13.5px;color:#5b6d7d;margin:0}
+.card-body time{font-size:13.5px;color:#5b6d7d}
+.cm-nowrap{white-space:nowrap}
+.page-banner .banner-text h1{overflow-wrap:normal;word-break:keep-all}
+@media(max-width:480px){
+  .float-rail a,.float-rail button{width:44px!important;height:44px!important}
+  #cm-chat .cm-chat-btn{width:44px!important;height:44px!important}
+  .cm-quote-check{margin-right:40px}
+  main .wrap{padding-right:64px}
+  .cm-process,.cm-faq,.cm-related,.cm-trust,.cm-tasknav{padding-right:64px}
+}
